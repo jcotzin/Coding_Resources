@@ -26,16 +26,13 @@
     <%= f.text_field :rating %>
   </div>
 
+  <div class="url_input">
+    <h4>Submit a URL to your favorite coding website!</h4>
+  <%= url_field(:resource, :thumb_url) %>
+  </div><br>
+
   <div class="actions">
     <%= f.submit %>
-  </div>
-
-  <div class="url_input">
-  <!-- <%#= url_field(@go) #%> -->
-</div><br>
-
-  <div class="action_url">
-  <%= f.submit "Insert URL" %>
   </div>
 
 <% end %><br>

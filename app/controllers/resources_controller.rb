@@ -4,7 +4,7 @@ class ResourcesController < ApplicationController
 
   def index
     @resources = Resource.all
-    @go = LinkThumbnailer.generate('https://www.youtube.com/watch?v=0XFudmaObLI')
+    @thumb_url = LinkThumbnailer.generate('https://www.youtube.com/watch?v=0XFudmaObLI')
 
   end
 
@@ -69,6 +69,6 @@ class ResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:resource).permit(:title, :description, :rating, :image)
+      params.require(:resource).permit(:title, :description, :rating, :thumb_url)
     end
 end

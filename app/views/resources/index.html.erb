@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
-<%= image_tag @go.images.first.src.to_s, size:"160x100" %>
-<%= @go.title %>
-<%= @go.description %>
-<% if @go.videos == !nil %>
-<%= video_tag @go.video %>
+<%= image_tag @thumb_url.images.first.src.to_s, size:"160x100" %>
+<%= @thumb_url.title %>
+<%= @thumb_url.description %>
+<% if @thumb_url.videos == !nil %>
+<%= video_tag @thumb_url.video %>
 <% end %>
 
 <h1>Resources</h1>

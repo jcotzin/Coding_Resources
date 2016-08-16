@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'materialize-sass'
+gem 'bootstrap-sass'
 gem 'link_thumbnailer'
 gem 'hirb'
 gem 'devise'
