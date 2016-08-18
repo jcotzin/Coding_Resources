@@ -4,8 +4,6 @@ class ResourcesController < ApplicationController
 
   def index
     @resources = Resource.all
-    @thumb_url = LinkThumbnailer.generate('https://www.youtube.com/watch?v=0XFudmaObLI')
-
   end
 
   def show
@@ -37,8 +35,6 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /resources/1
-  # PATCH/PUT /resources/1.json
   def update
     respond_to do |format|
       if @resource.update(resource_params)
@@ -56,7 +52,7 @@ class ResourcesController < ApplicationController
   def destroy
     @resource.destroy
     respond_to do |format|
-      format.html { redirect_to resources_url, notice: 'Resource was successfully destroyed.' }
+      format.html { redirect_to resources_url, notice: 'Deleted!' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +65,6 @@ class ResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:resource).permit(:title, :description, :rating, :thumb_url)
+      params.require(:resource).permit(:title, :description, :rating, :thumb)
     end
 end
