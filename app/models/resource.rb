@@ -1,4 +1,5 @@
 class Resource < ApplicationRecord
+  searchkick 
   belongs_to :user
   has_many :reviews
 
@@ -13,5 +14,6 @@ class Resource < ApplicationRecord
   def show_description
     LinkThumbnailer.generate(self.thumb).description
   end
+
 
 end

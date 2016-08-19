@@ -2,6 +2,14 @@ class ResourcesController < ApplicationController
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
+  def search
+    if params[:search].present?
+      @resources = Resource.search(params[:search])
+    else
+      @resources = Resource.all
+    end
+  end
+
   def index
     @resources = Resource.all
   end
@@ -9,7 +17,7 @@ class ResourcesController < ApplicationController
   def show
     @reviews = Review.where(resource_id: @resource.id).order("created_at DESC")
 
-    if @review.blank?
+    if @reviews.blank?
       @avg_review = 0
     else
       @avg_review = @reviews.average(:rating).round(2)

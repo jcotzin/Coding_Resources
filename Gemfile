@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'searchkick'
 gem 'materialize-sass'
 gem 'link_thumbnailer'
 gem 'hirb'

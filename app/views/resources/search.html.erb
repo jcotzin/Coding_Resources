@@ -1,0 +1,10 @@
+<h1>dope</h1>
+<div class="row">
+  <% @resources.each do |resource| %>
+    <div class="col s6 col m3">
+      <div class="thumbnail">
+        <%= link_to (image_tag resource.show_image, size:"160x100"), resource %>
+      </div>
+    </div>
+  <% end %>
+</div>
