@@ -8,20 +8,21 @@ class ResourcesController < ApplicationController
 
   def show
     @reviews = Review.where(resource_id: @resource.id).order("created_at DESC")
+
+    if @review.blank?
+      @avg_review = 0
+    else
+      @avg_review = @reviews.average(:rating).round(2)
+    end
   end
 
-  # GET /resources/new
   def new
-    @resource = Resource.new
     @resource = current_user.resources.build
   end
 
-  # GET /resources/1/edit
   def edit
   end
 
-  # POST /resources
-  # POST /resources.json
   def create
     @resource = current_user.resources.build(resource_params)
 
@@ -48,8 +49,6 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # DELETE /resources/1
-  # DELETE /resources/1.json
   def destroy
     @resource.destroy
     respond_to do |format|
@@ -59,12 +58,11 @@ class ResourcesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_resource
       @resource = Resource.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
       params.require(:resource).permit(:title, :description, :rating, :thumb)
     end

@@ -15,6 +15,7 @@ class ReviewsController < ApplicationController
       @review = Review.new(review_params)
       @review.user_id = current_user.id #if a user leaves a review, they are assigned their user id
       @review.resource_id = @resource.id
+      # here we are setting the resource_id attribute of the review equal to the resource id (which is an attribute automatically created)
 
       if @review.save
         redirect_to @resource
