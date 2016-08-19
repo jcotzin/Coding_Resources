@@ -1,5 +1,6 @@
 class Resource < ApplicationRecord
   belongs_to :user
+  has_many :reviews
 
   def show_image
     LinkThumbnailer.generate(self.thumb).images.first.src.to_s

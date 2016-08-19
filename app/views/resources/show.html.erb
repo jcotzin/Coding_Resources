@@ -18,30 +18,40 @@
               </tr>
               <tr>
                 <td><strong>Rating:</strong></td>
-                <!-- <td><#%= @resource.rating %></td> -->
+                <%= @resource.rating %></td>
               </tr>
             </tbody>
           </table>
-          <%#= link_to "Write a Review", new_resource_review_path(@resource) %>
+          <%= link_to "Write a Review", new_resource_review_path(@resource) %>
         </div>
-      </div>
       <div class="col m7 offset-m1">
         <h1 class="review_title"><%= @resource.title %></h1>
         <p><%= @resource.description %></p>
 
         <% if @reviews.blank? %>
         <p>No reviews just yet, would you like to add the first?</p>
-        <%#= link_to "Write Review", new_resource_review_path(@resource), class: "btn btn-danger" %>
-        <%# else %>
-        <%# @reviews.each do |review| %>
-        <!-- <div class="reviews"> -->
-          <!-- <p><%#= review.rating %></p>
-          <p><%#= review.comment %></p>
+        <%= link_to "Write Review", new_resource_review_path(@resource), class: "btn btn-danger" %>
+        <% else %>
+        <% @reviews.each do |review| %>
+        <div class="reviews">
+          <div class="star-rating" data-score=<%= review.rating %></div>
+          <p><%= review.comment %></p>
         </div>
-        <%# end %> -->
+        <% end %>
         <% end %>
       </div>
     </div>
   </div>
+  </div>
 <%= link_to 'Edit', edit_resource_path(@resource) %> |
 <%= link_to 'Back', resources_path %>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>

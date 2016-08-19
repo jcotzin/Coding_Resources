@@ -1,14 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_resource
   before_action :authenticate_user!
   # only signed in user can write review
-
-  def index
-    @reviews = Review.all
-  end
-
-  def show
-  end
 
   def new
     @review = Review.new
@@ -17,15 +11,17 @@ class ReviewsController < ApplicationController
   def edit
   end
 
-  def create
-    @review = Review.new(review_params)
-    @review.user_id = current_user.id #if a user leaves a review, they are assigned their user id
-    if @review.save
-      redirect_to @review
-    else
-      render 'new'
+    def create
+      @review = Review.new(review_params)
+      @review.user_id = current_user.id #if a user leaves a review, they are assigned their user id
+      @review.resource_id = @resource.id
+
+      if @review.save
+        redirect_to @resource
+      else
+        render 'new'
+      end
     end
-  end
 
   def update
     @review.update(review_params)
@@ -40,6 +36,10 @@ class ReviewsController < ApplicationController
 
     def set_review
       @review = Review.find(params[:id])
+    end
+
+    def set_resource
+      @resource = Resource.find(params[:resource_id])
     end
 
     def review_params

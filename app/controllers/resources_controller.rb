@@ -7,6 +7,7 @@ class ResourcesController < ApplicationController
   end
 
   def show
+    @reviews = Review.where(resource_id: @resource.id).order("created_at DESC")
   end
 
   # GET /resources/new
