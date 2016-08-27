@@ -1,17 +1,139 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
- @import "materialize";
+@import "materialize";
+
+body {
+  font-family: 'Roboto', serif;
+  background-color: #e8edf3;
+  // overflow: hidden;
+}
+
+nav {
+  color: #141414;
+  background-color: white;
+}
+
+nav ul {
+  margin: 8px;
+  margin-top: -1px;
+}
+nav .nav-wrapper {
+  background-color: white;
+  color: #141414;
+  height: 105%;
+}
+
+a.navbar-brand {
+  position: absolute;
+  color: #141414;
+  font-size: 2rem;
+  margin-left: 10px;
+  margin-top: -1px;
+  font-family: 'Comfortaa';
+
+}
+
+nav ul a {
+  color: #141414;
+  font-size: 1.3rem;
+}
+
+nav ul a:hover {
+    border-bottom: 3px solid #141414;
+    background-color: white;
+    line-height: 2.5;
+}
+
+nav .nav-wrapper.pitch {
+  background-color: #444;
+  color: white;
+  font-size: 15px;
+}
+
+.boom {
+  margin-left: 40px;
+  margin-left: 17%;
+  margin-top: .5%;
+}
+
+a.cyan.btn {
+  font-size: 14px;
+  text-transform: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 500;
+  margin-right: -9px;
+  border: none;
+}
+
+.right.hide-on-med-and-down {
+  margin-right: 125px;
+}
+
+.fa-book:before {
+    content: "\f02d";
+    margin-left: 20px;
+}
+
+.field {
+  width: 75%;
+  color: gray;
+  margin-left: 13%;
+}
+
+.card {
+  color: gray;
+  margin: 1.5rem 0 1rem 0;
+  font-size: 13px;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.actions a {
+  color: gray;
+padding: 9px;
+font-family: inherit;
+font-size: 20px;
+border-radius: 3px;
+border: 3px solid gray;
+}
+
+.card .fa-arrow-left {
+    color: gray;
+    margin-right: 95%;
+}
+
+.cancel {
+    margin-top: 10px;
+}
+
+.cancel a {
+  color: gray;
+  margin-top: 10px;
+}
+
+input {
+  background-color: white;
+  color: gray;
+padding: 9px;
+font-family: inherit;
+font-size: 20px;
+border-radius: 3px;
+border: 3px solid gray;
+}

@@ -1,20 +1,32 @@
 <nav>
-  <div class="nav-wrapper blue-grey lighten-4" >
-    <%= link_to "Coding Resources", root_path, class: "navbar-brand" %>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+  <div class="nav-wrapper" >
+    <span style = "color:#141414"><%= link_to "codeXhunter", root_path, class: "navbar-brand" %></span><%= image_tag "boom.jpg", size:"60x50", class:'boom' %>
+    <ul id="nav-mobile" class="right">
       <% if user_signed_in? %>
-      <li><%= link_to "New Resource", new_resource_path, class: "active" %></li>
+      <li>
+      <%= link_to "New Resource", new_resource_path, class: "active" %></li>
       <li><%= link_to "Account", edit_user_registration_path %></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "active" %></li>
       <% else %>
       <li><%= link_to "Sign Up", new_user_registration_path, class: "active" %></li>
       <li><%= link_to "Sign In", new_user_session_path, class: "active" %></li>
       <% end %>
-      <%= form_tag search_resources_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
-  <p>
-    <%= text_field_tag :search, params[:search], class: "form-control" %>
-    <%= submit_tag "Search", name: nil, class: "btn default" %>
-  </p>
-<% end %>
+      <li><i class="material-icons">search</i>
+      <%= form_tag search_resources_path, method: :get, role: "search" do %></li>
+      <li><%= text_field_tag :search, params[:search], class: "form-control" %></li>
+      <!-- <li><%#= submit_tag "Search" %></li> -->
+      <% end %>
     </ul>
   </div>
 </nav>
+<% if !user_signed_in? %>
+<nav>
+   <div class="nav-wrapper pitch">
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+       <li><p><span style="color:#e8edf3";>What are your favorite coding resources?</span> <span style="color:#999";>codeXhunter is for developers who want to share and discover new resources.</span></p></li>
+       <li><a class="cyan lighten-2 btn">Learn More</a></li>
+       <li><a class="cyan lighten-2 btn">Sign Up</a></li>
+     </ul>
+   </div>
+ </nav>
+<% end %>

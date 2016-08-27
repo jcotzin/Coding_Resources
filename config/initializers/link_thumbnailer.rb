@@ -46,7 +46,7 @@ LinkThumbnailer.configure do |config|
 
   # Minimum description length for a website.
   #
-  # config.description_min_length = 25
+  # config.description_min_length = 10
 
   # Regex of words considered positive to rate website description.
   #
@@ -66,7 +66,7 @@ LinkThumbnailer.configure do |config|
   # Setting this value to false will increase performance since for each images, LinkThumbnailer
   # does not have to fetch its size and type.
   #
-  # config.image_stats = true
+  # config.image_stats = false
 
   # Whether you want LinkThumbnailer to raise an exception if the Content-Type of the HTTP request
   # is not an html or xml.
