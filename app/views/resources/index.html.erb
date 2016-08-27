@@ -1,16 +1,5 @@
-
-
- <div id="modal1" class="modal">
-  <div class="modal-content">
-    <%= render partial: 'show', locals: {resources: @resources } %>
-
-          </div>
-      </div>
-
-  <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
-</div>
+<!-- Modal Trigger -->
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
 
       <div class="card-content black-text">
         <div class="row">
@@ -18,10 +7,16 @@
           <div class="col s4">
             <div class="card">
               <ul>
-              <li><%= link_to (image_tag resource.show_image, size:"160x100", class:"modal-trigger", href:"#modal1"), resource %></li>
+              <li><%= link_to (image_tag resource.show_image, size:"160x100"), resource %></li>
               <li><em><%= resource.show_title %></em></li>
               <li><%= resource.title %></li>
               <%= resource.show_description %>
+              <!-- modal -->
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+              <%#= render partial: 'show', locals: { :resource => @resources} %>
+                </div>
+              </div>
               </ul>
             </div>
           </div>

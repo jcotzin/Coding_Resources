@@ -1,0 +1,46 @@
+
+<div class="row">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag @resource.show_image, size:"260x200" %>
+        <span class="card-title"><%= @resource.show_title %></span>
+      </div>
+      <div class="star-rating" data-score= <%= @avg_review %> ></div><div style="text-align:left"><em><%= "#{@reviews.length} reviews" %></em></div>
+      <div class="card-content">
+
+        <p><%= @resource.show_description %></p>
+      </div>
+      <div class="card-action">
+        <% if @reviews.blank? %>
+        <p>No reviews just yet, would you like to add the first?</p>
+        <%= link_to "Write Review", new_resource_review_path(@resource), class: "waves-effect waves-light btn" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% else %>
+<% @reviews.each do |review| %>
+<div class="reviews">
+  <div class="star-rating" data-score= <%= review.rating %> ></div>
+  <p><%= review.comment %></p>
+</div>
+<% end %>
+<%= link_to "Write Review", new_resource_review_path(@resource), class: "waves-effect waves-light btn" %><br><br>
+<% end %>
+<div class="backk">
+<%= link_to 'Edit', edit_resource_path(@resource) %> |
+<%= link_to 'Back', resources_path %> |
+<%= link_to 'Delete', @resource, method: :delete %>
+
+</div>
+
+<script>
+$('.star-rating').raty({
+  path: '/assets/',
+  readOnly: true,
+  score: function() {
+    return $(this).attr('data-score');
+  }
+});
+</script>
