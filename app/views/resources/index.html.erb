@@ -7,14 +7,14 @@
           <div class="col s4">
             <div class="card">
               <ul>
-              <li><%= link_to (image_tag resource.show_image, size:"160x100"), resource %></li>
+              <li><%= link_to (image_tag resource.show_image, size:"160x100", class:"modal-trigger", href:"#modal1"), resource %></li>
               <li><em><%= resource.show_title %></em></li>
               <li><%= resource.title %></li>
               <%= resource.show_description %>
               <!-- modal -->
               <div id="modal1" class="modal">
                 <div class="modal-content">
-              <%#= render partial: 'show', locals: { :resource => @resources} %>
+              <%#= render 'show', locals: { :resource => @resources} %>
                 </div>
               </div>
               </ul>
