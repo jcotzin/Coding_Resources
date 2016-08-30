@@ -15,5 +15,11 @@ class Resource < ApplicationRecord
     LinkThumbnailer.generate(self.thumb).description
   end
 
-
+  def avg_review
+      if reviews.blank?
+         0
+      else
+        reviews.average(:rating).round(2)
+      end
+   end
 end

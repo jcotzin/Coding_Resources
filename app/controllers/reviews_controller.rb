@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
       # here we are setting the resource_id attribute of the review equal to the resource id (which is an attribute automatically created)
 
       if @review.save
-        redirect_to @resource
+        redirect_to root_path
       else
         render 'new'
       end

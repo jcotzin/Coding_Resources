@@ -25,12 +25,18 @@ body {
 nav {
   color: #141414;
   background-color: white;
+  position: relative;
 }
 
 nav ul {
   margin: 8px;
   margin-top: -1px;
 }
+
+nav ul li {
+  margin-top: -3px;
+}
+
 nav .nav-wrapper {
   background-color: white;
   color: #141414;
@@ -64,6 +70,10 @@ nav .nav-wrapper.pitch {
   font-size: 15px;
 }
 
+ul#nav-mobile p {
+  font-size: 16px;
+  margin-top: 4px;
+}
 .boom {
   margin-left: 40px;
   margin-left: 17%;
@@ -91,14 +101,18 @@ a.cyan.btn {
 
 .field {
   width: 75%;
-  color: gray;
+  color: #444;;
   margin-left: 13%;
 }
 
 .card {
-  color: gray;
+  color: #444;;
   margin: 1.5rem 0 1rem 0;
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.card .card-title {
+  font-size: 16px;
 }
 
 .actions {
@@ -106,16 +120,16 @@ a.cyan.btn {
 }
 
 .actions a {
-  color: gray;
+  color: #444;;
 padding: 9px;
 font-family: inherit;
 font-size: 20px;
 border-radius: 3px;
-border: 3px solid gray;
+border: 3px solid #444;;
 }
 
 .card .fa-arrow-left {
-    color: gray;
+    color: #444;;
     margin-right: 95%;
 }
 
@@ -124,16 +138,33 @@ border: 3px solid gray;
 }
 
 .cancel a {
-  color: gray;
+  color: #444;;
   margin-top: 10px;
 }
 
 input {
   background-color: white;
-  color: gray;
+  color: #444;;
 padding: 9px;
 font-family: inherit;
 font-size: 20px;
 border-radius: 3px;
-border: 3px solid gray;
+border: 3px solid #444;;
+}
+
+//modal
+.mod {
+  margin-top: -24px;
+}
+
+.mod p {
+  font-size: 14px;
+}
+
+#modal1 {
+  border-radius: 2px;
+
+}
+.modal {
+  width: 60%;
 }

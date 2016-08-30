@@ -15,13 +15,6 @@ class ResourcesController < ApplicationController
   end
 
   def show
-    @reviews = Review.where(resource_id: @resource.id).order("created_at DESC")
-
-    if @reviews.blank?
-      @avg_review = 0
-    else
-      @avg_review = @reviews.average(:rating).round(2)
-    end
   end
 
   def new
@@ -36,7 +29,7 @@ class ResourcesController < ApplicationController
 
     respond_to do |format|
       if @resource.save
-        format.html { redirect_to @resource, notice: 'Resource was successfully created.' }
+        format.html { redirect_to action: "index", notice: 'Resource was successfully created.' }
         format.json { render :show, status: :created, location: @resource }
       else
         format.html { render :new }

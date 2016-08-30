@@ -20,12 +20,14 @@
   </div>
 </nav>
 <% if !user_signed_in? %>
-<nav>
+<nav class="second">
    <div class="nav-wrapper pitch">
      <ul id="nav-mobile" class="right hide-on-med-and-down">
-       <li><p><span style="color:#e8edf3";>What are your favorite coding resources?</span> <span style="color:#999";>codeXhunter is for developers who want to share and discover new resources.</span></p></li>
-       <li><a class="cyan lighten-2 btn">Learn More</a></li>
-       <li><a class="cyan lighten-2 btn">Sign Up</a></li>
+       <li><p><span style="color:#e8edf3";><strong>What are your favorite coding resources?</strong></span> <span style="color:#999";>codeXhunter is for developers who want to share and discover new resources.</span></p></li>
+       <!-- <li><a class="learn cyan lighten-2 btn">Learn More</a></li> -->
+       <li><%= link_to "Learn More", nil, class: "learn cyan lighten-2 btn" %></li>
+       <!-- <li><a class="sign-up cyan lighten-2 btn">Sign Up</a></li> -->
+       <li><%= link_to "Sign Up", new_user_registration_path, class: "sign-up cyan lighten-2 btn" %></li>
      </ul>
    </div>
  </nav>
