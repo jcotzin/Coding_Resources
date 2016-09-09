@@ -2,5 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', resource_path(@resource) %>
+<%= link_to 'Back', resource_path(@resource), class: "waves-effect waves-light btn" %>
+<%= link_to "Delete", resource_review_path(@review.resource, @review), method: :delete, data: { confirm: "Are you sure?" }, class: "waves-effect waves-light btn" %>
 <!-- here i removed the paths -->

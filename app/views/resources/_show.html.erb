@@ -16,23 +16,34 @@
   <div class="col s6 offset-s6">
     <% if resource.reviews.blank? %>
     <p>No reviews just yet, would you like to add the first?</p>
-    <%= link_to "Write Review", new_resource_review_path(resource), class: "waves-effect waves-light btn" %>
+    <%= link_to "Write A Review", new_resource_review_path(resource), class: "waves-effect waves-light btn" %>
     <% else %>
     <% resource.reviews.each do |review| %>
     <div class="reviews">
       <div class="star-rating" data-score= <%= review.rating %> ></div>
       <p><%= review.comment %></p>
-    </div>
-    <% end %>
-    <%= link_to "Write Review", new_resource_review_path(resource), class: "waves-effect waves-light btn" %><br><br>
-    <% end %>
-    <div class="backk">
-      <%= link_to 'Edit', edit_resource_path(resource) %> |
-      <%= link_to 'Back', resources_path %> |
-      <%= link_to 'Delete', resource, method: :delete %>
 
+      <% if user_signed_in? %>
+      <% if review.user_id == current_user.id %>
+      <%= link_to "Edit", edit_resource_review_path(review.resource, review), class: "waves-effect waves-light btn cyan lighten-2" %>
     </div>
+    <% end %>
+    <% end %>
+    <%#= link_to 'Edit', edit_resource_review_path(review, review) %>
+  <% end %>
+    </div>
+  <%= link_to "Write A Review", new_resource_review_path(resource), class: "waves-effect waves-light btn cyan lighten-2" %><br><br>
+  <% end %>
+  <div class="backk">
+    <% if user_signed_in? %>
+    <% if resource.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_resource_path(resource), class: "waves-effect waves-light btn cyan lighten-2" %> |
+    <%= link_to 'Back', resources_path, class: "waves-effect waves-light btn cyan lighten-2" %> |
+    <%= link_to 'Delete', resource, method: :delete, class: "waves-effect waves-light btn cyan lighten-2" %>
+    <% end %>
+    <% end %>
   </div>
+</div>
 </div>
 <script>
 $('.star-rating').raty({

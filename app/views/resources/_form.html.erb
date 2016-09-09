@@ -14,9 +14,13 @@
     </div>
   <% end %>
 
+  <!-- <div class="field">
+  <%#= f.label :rating %><br>
+  <%#= f.text_field :rating %>
+  </div> -->
   <div class="field">
-  <%= f.label :rating %><br>
-  <%= f.text_field :rating %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title%>
   </div>
 
   <div class="field">
@@ -25,7 +29,7 @@
   </div><br>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "waves-effect waves-light btn cyan lighten-2" %>
   </div>
 
 <% end %><br>

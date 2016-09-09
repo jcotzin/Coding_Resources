@@ -56,6 +56,8 @@ a.navbar-brand {
 nav ul a {
   color: #141414;
   font-size: 1.3rem;
+  display: inline;
+  padding-bottom: 14px;
 }
 
 nav ul a:hover {
@@ -78,6 +80,22 @@ ul#nav-mobile p {
   margin-left: 40px;
   margin-left: 17%;
   margin-top: .5%;
+}
+.waves-input-wrapper .waves-button-input {
+  color: white;
+}
+
+.waves-effect input[type="submit"] {
+  font-size: 14px;
+  text-transform: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 500;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #4dd0e1;
+    box-shadow: 0 1px 0 0 #4dd0e1;
 }
 
 a.cyan.btn {
@@ -167,4 +185,11 @@ border: 3px solid #444;;
 }
 .modal {
   width: 60%;
+  height: 900px !important;
+  border-radius: 6px;
+}
+
+.row .col.offset-s6 {
+    margin-left: 50%;
+    margin-top: -36%;
 }
