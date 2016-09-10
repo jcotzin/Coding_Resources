@@ -1,11 +1,11 @@
 <!-- Modal Trigger -->
   <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
-
+<div class="container">
       <div class="card-content black-text">
         <div class="row">
           <% @resources.each_with_index do |resource, index| %>
           <div class="col s4">
-            <div class="card">
+            <div class="card landing">
               <ul>
               <li><%= link_to (image_tag resource.show_image, size:"190x130", class:"modal-trigger", href:"#modal1#{index}"), resource %></li>
               <li><em><%= resource.show_title %></em></li>
@@ -23,3 +23,4 @@
           <% end %>
         </div>
       </div>
+</div>
