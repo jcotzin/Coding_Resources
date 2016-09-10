@@ -16,7 +16,7 @@
   <div class="col s6 offset-s6">
     <% if resource.reviews.blank? %>
     <p>No reviews just yet, would you like to add the first?</p>
-    <%= link_to "Write A Review", new_resource_review_path(resource), class: "waves-effect waves-light btn" %>
+    <%= link_to "Write A Review", new_resource_review_path(resource), class: "waves-effect waves-light btn cyan lighten-2" %>
     <% else %>
     <% resource.reviews.each do |review| %>
     <div class="reviews">
