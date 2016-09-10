@@ -1,6 +1,4 @@
-User.create!([
-  {email: "jcotzin@gmail.com", encrypted_password: "$2a$11$wBJImiuEVb/VSA9zajmst.ckkJ514XcwONw/QGCIHjmDUjC6JSqjq", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-09-10 22:37:23", last_sign_in_at: "2016-09-10 22:37:23", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
-])
+
 Resource.create!([
   {title: "Learn to Code with Me", description: nil, user_id: 1, thumb: "http://learntocodewith.me", rating: nil},
   {title: "Udemy", description: nil, user_id: 1, thumb: "https://www.udemy.com/", rating: nil},
