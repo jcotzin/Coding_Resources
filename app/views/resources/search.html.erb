@@ -1,10 +1,25 @@
-<h1>dope</h1>
-<div class="row">
-  <% @resources.each do |resource| %>
-    <div class="col s6 col m3">
-      <div class="thumbnail">
-        <%= link_to (image_tag resource.show_image, size:"160x100"), resource %>
+
+<div class="container">
+      <div class="card-content black-text">
+        <div class="row">
+          <% @resources.each_with_index do |resource, index| %>
+          <div class="col s4">
+            <div class="card landing">
+              <ul>
+              <li><%= link_to (image_tag resource.show_image, size:"190x130", class:"modal-trigger", href:"#modal1#{index}"), resource %></li>
+              <li><em><%= resource.show_title %></em></li>
+              <li><%= resource.title %></li>
+              <%= resource.show_description %>
+              <!-- modal -->
+              <div id="modal1<%= index %>" class="modal">
+                <div class="modal-content">
+              <%= render partial: 'show', locals: { resource: resource} %>
+                </div>
+              </div>
+              </ul>
+            </div>
+          </div>
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
 </div>
