@@ -42,6 +42,9 @@ GEM
     arel (7.1.1)
     ast (2.3.0)
     bcrypt (3.1.11)
+    bonsai-elasticsearch-rails (0.1.0)
+      elasticsearch-model (~> 0)
+      elasticsearch-rails (~> 0)
     builder (3.2.2)
     byebug (9.0.5)
     coffee-rails (4.2.1)
@@ -64,6 +67,11 @@ GEM
       elasticsearch-transport (= 2.0.0)
     elasticsearch-api (2.0.0)
       multi_json
+    elasticsearch-model (0.1.9)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.9)
     elasticsearch-transport (2.0.0)
       faraday
       multi_json
@@ -226,9 +234,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bonsai-elasticsearch-rails
   byebug
   coffee-rails (~> 4.2)
   devise
+  elasticsearch-model
+  elasticsearch-rails
   hirb
   jbuilder (~> 2.5)
   jquery-rails
@@ -250,4 +261,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.12.5
+   1.13.1

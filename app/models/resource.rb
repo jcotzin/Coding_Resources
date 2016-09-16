@@ -1,7 +1,11 @@
+require 'elasticsearch/model'
+
 class Resource < ApplicationRecord
   searchkick
   belongs_to :user
   has_many :reviews
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
   def show_image
     LinkThumbnailer.generate(self.thumb).images.first.src.to_s

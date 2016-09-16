@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'bonsai-elasticsearch-rails', group: :production
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 gem 'rails_12factor', group: :production
 gem 'seed_dump'
 gem 'pg'
