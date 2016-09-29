@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rdoc'
 gem 'bonsai-elasticsearch-rails', group: :production
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
